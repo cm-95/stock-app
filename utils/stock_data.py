@@ -3,7 +3,7 @@ from datetime import datetime, date, timedelta
 import yfinance as yfin
 import os
 import pandas as pd
-import get_stocks
+from utils import get_stocks
 
 
 def prev_weekday(adate):
@@ -58,9 +58,3 @@ class StockData:
 
     def _save_close_data(self):
         self.close_data.to_pickle(self.DATA_PATH + "/close_data.pkl")
-
-
-sd = StockData()
-
-sd.get_stock_data()
-print()
