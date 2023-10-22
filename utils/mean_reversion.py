@@ -50,7 +50,7 @@ class MeanReversion:
         # last_week['Overall_Rank'] = last_week.Rank_SMA
 
         return last_week.sort_values("Overall_Rank").reset_index(drop=True)
-    
+
     def show_top_stocks(self):
         top_stocks = list(self.ranked_stocks.head(20).Ticker)
         top_stocks_p = self.stock_data[top_stocks]
@@ -62,8 +62,10 @@ class MeanReversion:
             s_sma = self.short_mavg[[stock]]
             l_sma = self.long_mavg[[stock]]
 
-            sub_df = p.join(s_sma,  lsuffix='_PRICE', rsuffix='_S_SMA')
+            sub_df = p.join(s_sma, lsuffix="_PRICE", rsuffix="_S_SMA")
 
-            sub_df = sub_df.join(l_sma).rename(columns={stock:f'{stock}_L_SMA'})
+            sub_df = sub_df.join(l_sma).rename(columns={stock: f"{stock}_L_SMA"})
 
-            sub_df.tail(365).plot(figsize=(25,10), title=stock, fontsize=15).title.set_size(30).show()
+            sub_df.tail(365).plot(
+                figsize=(25, 10), title=stock, fontsize=15
+            ).title.set_size(30).show()
