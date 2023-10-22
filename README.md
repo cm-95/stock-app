@@ -22,12 +22,4 @@ The stocks are ranked based on the following criteria:
 
 The ranks are added up into an overall ranking and the top 20 are chosen. Qualitative research should then be taken to decide whether the stock.
 
-The notebook for showcasing the stock can be found here: [Mean Reversion Notebook] (mean_reversion_top_stocks.ipynb)
-
-Examples can be seen below:
-
-![alt text](assets/mr_top_stock_example1.png)
-
-![alt text](assets/mr_top_stock_example2.png)
-
-![alt text](assets/mr_top_stock_example3.png)
+The notebook for showcasing the stock can be found here: [Mean Reversion Notebook](mean_reversion_top_stocks.ipynb)
